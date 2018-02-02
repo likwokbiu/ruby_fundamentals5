@@ -11,15 +11,15 @@
 
 @match_venues = []
 
-def find_venues(wheelchair_accessible, capacity)
+def find_venues(wheelchair_accessible, capacity, city)
   @venues.each do |venues_x|
-    if venues_x[:wheelchair_accessible] == wheelchair_accessible && venues_x[:capacity] >= capacity
+    if venues_x[:wheelchair_accessible] == wheelchair_accessible && venues_x[:capacity] >= capacity && venues_x[:city] == city
         @match_venues << venues_x[:address]
     end
   end
 end
 
-find_venues(true, 150)
+find_venues(true, 150, "Toronto")
 puts
 print @match_venues
 puts
